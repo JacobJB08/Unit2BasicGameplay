@@ -10,6 +10,8 @@ public class PlayerController : MonoBehaviour
     public float xRange = 21;
     public float zRange = 20;
     public GameObject projectilePrefab;
+    public Transform projectileSpawnPoint;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -47,7 +49,7 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            Instantiate(projectilePrefab, transform.position, projectilePrefab.transform.rotation);
+            Instantiate(projectilePrefab, projectileSpawnPoint.position, projectilePrefab.transform.rotation);
         }
     }
 }
